@@ -20,6 +20,7 @@ body{
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+	user-select: none;
 }
 .wrapper header {
   display: flex;
@@ -114,9 +115,7 @@ header .current-date{
 .days li.active::before{
   background: #aaa;
 }
-.days li.active :hover::before{
-  opacity: 0;
-}
+
 .days li:not(.active):hover::before{
   background: #FFB2C1;
 }
@@ -134,9 +133,8 @@ header .current-date{
     z-index: -1; 
 }
 
-@media only screen and (max-width: 768px) {
-  
-  .days li:not(.active):hover::before{
-  opacity: 0;
-}
+@media (max-width: 768px) {
+  .days li:not(.active):hover::before {
+    background: none;
+  }
 }
