@@ -130,3 +130,10 @@ header .current-date{
     border-radius: 50%;
     z-index: -1; 
 }
+
+@media only screen and (max-width: 768px) {
+  
+  .days li:not(.active):hover::before{
+  opacity: 0;
+}
+}
