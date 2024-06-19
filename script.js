@@ -65,10 +65,12 @@ const handleDayInteraction = (event) => {
 // Function to attach event listeners for day clicks or touches
 const attachDayClickListeners = () => {
     const days = document.querySelectorAll('.days li');
-    const interactionEvent = isMobileDevice() ? 'touchstart' : 'click';
-    
     days.forEach(day => {
-        day.addEventListener(interactionEvent, handleDayInteraction);
+        if (isMobileDevice()) {
+            day.addEventListener('touchstart', handleDayInteraction);
+        } else {
+            day.addEventListener('click', handleDayInteraction);
+        }
     });
 };
 
