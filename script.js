@@ -41,10 +41,16 @@ const renderCalendar = () => {
 const handleDayClick = (event) => {
   const clickedLi = event.target;
   if (!clickedLi.classList.contains('inactive')) {
-    clickedLi.classList.toggle('clicked');
+    // Remove 'clicked' class from all days first
+    document.querySelectorAll('.days li').forEach(day => {
+      day.classList.remove('clicked');
+    });
+
+    // Add 'clicked' class to the clicked day
+    clickedLi.classList.add('clicked');
+    
     const day = clickedLi.dataset.day;
-    const isClicked = clickedLi.classList.contains('clicked');
-    localStorage.setItem(`clicked_${currYear}_${currMonth}_${day}`, isClicked);
+    localStorage.setItem(`clicked_${currYear}_${currMonth}_${day}`, true);
   }
 };
 
