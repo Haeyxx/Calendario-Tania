@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  user-select: none;
 }
 body{
   display: flex;
@@ -20,7 +21,7 @@ body{
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-	user-select: none;
+	
 }
 .wrapper header {
   display: flex;
@@ -133,8 +134,4 @@ header .current-date{
     z-index: -1; 
 }
 
-@media (max-width: 768px) {
-  .days li:not(.active):hover::before {
-    background: none;
-  }
-}
+
