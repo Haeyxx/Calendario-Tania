@@ -48,7 +48,7 @@ const handleDayClick = (event) => {
 
     // Add 'clicked' class to the clicked day
     clickedLi.classList.add('clicked');
-    
+
     const day = clickedLi.dataset.day;
     localStorage.setItem(`clicked_${currYear}_${currMonth}_${day}`, true);
   }
