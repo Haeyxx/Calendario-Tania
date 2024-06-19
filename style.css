@@ -134,4 +134,8 @@ header .current-date{
     z-index: -1; 
 }
 
-
+@media (max-width: 768px) {
+  .days li:not(.active):hover::before {
+    background: none; /* Remove hover effect on mobile */
+  }
+}
