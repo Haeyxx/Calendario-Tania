@@ -2,9 +2,9 @@ const daysTag = document.querySelector(".days");
 const currentDate = document.querySelector(".current-date");
 const prevNextIcon = document.querySelectorAll(".icons span");
 
-let date = new Date(),
-  currYear = date.getFullYear(),
-  currMonth = date.getMonth();
+let date = new Date();
+let currYear = date.getFullYear();
+let currMonth = date.getMonth();
 
 const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
   "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
@@ -39,10 +39,10 @@ const renderCalendar = () => {
 }
 
 const handleDayClick = (event) => {
-  const clickedLi = event.target;
+  const clickedLi = event.target.closest('li');
   if (!clickedLi.classList.contains('inactive')) {
-    // Remove 'clicked' class from all days first
-    document.querySelectorAll('.days li').forEach(day => {
+    // Remove 'clicked' class from all days
+    daysTag.querySelectorAll('.days li').forEach(day => {
       day.classList.remove('clicked');
     });
 
@@ -55,7 +55,7 @@ const handleDayClick = (event) => {
 };
 
 const attachDayClickListeners = () => {
-  const days = document.querySelectorAll('.days li');
+  const days = daysTag.querySelectorAll('.days li');
   days.forEach(day => {
     day.addEventListener('click', handleDayClick);
   });
